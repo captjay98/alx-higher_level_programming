@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-alpha = range(97, 122)
-ivar = 65
 
-for i in alpha:
+for i in range(97, 122):
     print(chr(i), end="")
