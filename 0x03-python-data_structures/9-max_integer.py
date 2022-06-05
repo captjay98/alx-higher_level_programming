@@ -6,8 +6,11 @@ def max_integer(my_list=[]):
 
     largest = my_list[0]
 
-    for item in range(my_list):
-        if item[i] > largest:
-            largest = item[i]
+    for item in range(len(my_list)):
+        if my_list[item] > largest:
+            largest = my_list[item]
 
     return largest
+my_list = [1, 90, 2, 13, 34, 5, -13, 3]
+max_value = max_integer(my_list)
+print("Max: {}".format(max_value))
