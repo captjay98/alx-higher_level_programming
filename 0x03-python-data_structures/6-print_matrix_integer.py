@@ -6,3 +6,4 @@ def print_matrix_integer(matrix=[[]]):
             print("{:d}".format(matrix[row][column]), end="")
             if column != (len(matrix[row]) - 1):
                 print(" ", end="")
+        print("")
