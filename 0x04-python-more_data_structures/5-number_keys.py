@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 
 def number_keys(a_dictionary):
-    count = 0
-    for key in a_dictionary:
-        count += 1
-
+    count = len(a_dictionary)
     return count
 
 a_dictionary = { 'language': "C", 'number': 13, 'track': "Low level" }
