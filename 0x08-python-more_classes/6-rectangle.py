@@ -27,7 +27,6 @@ class Rectangle:
     @property
     def width(self):
         """Get/Set the width of the rectangle."""
-
         return self.__width
 
     @width.setter
@@ -42,7 +41,6 @@ class Rectangle:
     @property
     def height(self):
         """Get/Set height of the Rectangle"""
-
         return self.__height
 
     @height.setter
@@ -66,9 +64,7 @@ class Rectangle:
     def __str__(self):
         """ Returns a string representation of the rectangle.
             Representa the Rectangle with ##."""
-
         if self.__width == 0 or self.__height == 0:
-
             return ("")
 
         rect = []
@@ -76,8 +72,7 @@ class Rectangle:
             [rect.append("#") for j in range(self.__width)]
             if i != self.__height - 1:
                 rect.append("\n")
-
-        return "".join(rect)
+        return ("".join(rect))
 
     def __repr__(self):
         """Return the string representation of the Rectangle."""
@@ -86,9 +81,8 @@ class Rectangle:
         return (rect)
 
     def __del__(self):
-        """ method: __del__
-            deletes instance of Rectangle class and prints bye message
+        """ method: __del__.
+            deletes instance of Rectangle class and prints bye message.
         """
-
         Rectangle.number_of_instances -= 1
         print("Bye Rectangle...")
