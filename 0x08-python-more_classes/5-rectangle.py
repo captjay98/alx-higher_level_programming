@@ -2,9 +2,6 @@
 """Defines a Rectangle object."""
 
 
-from curses.textpad import rectangle
-
-
 class Rectangle:
     """Represent a Rectangle."""
 
@@ -15,12 +12,14 @@ class Rectangle:
             width(int): The width of the rectangle.
             height(int): The height of the.
         """
+
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
         """Get/Set the width of the rectangle."""
+
         return self.__width
 
     @width.setter
@@ -57,25 +56,24 @@ class Rectangle:
 
     def __str__(self):
         """Returns a string representation of the rectangle.
-
             Represents the Rectangle with ##.
         """
         if self.__width == 0 or self.__height == 0:
             return ("")
 
-        rectangle = []
+        rect = []
         for i in range(self.__height):
-            [rectangle.append('#') for j in range(self.__width)]
+            [rect.append('#') for j in range(self.__width)]
             if i != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
 
     def __repr__(self):
         """Return the string representation of the Rectangle."""
-        rectangle = "Rectangle(" + str(self.__width)
-        rectangle += ", " + str(self.__height) + ")"
-        return (rectangle)
+        rect = "Rectangle(" + str(self.__width)
+        rect += ", " + str(self.__height) + ")"
+        return (rect)
 
     def __del__(self):
-        """print message for deletion of Rectangle"""
+        """ print message for deletion of Rectangle"""
         print("Bye Rectangle...")
