@@ -68,7 +68,7 @@ class Rectangle:
 
         if self.__width == 0 or self.__height == 0:
 
-            return ""
+            return ("")
 
         rect = []
         for i in range(self.__height):
@@ -82,7 +82,7 @@ class Rectangle:
         """Return the string representation of the Rectangle."""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
-        return rect
+        return (rect)
 
     def __del__(self):
         """ method: __del__
