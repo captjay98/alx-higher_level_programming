@@ -1,3 +1,3 @@
-def copy_list(n):
-    new = [n]
+def copy_list(l):
+    new = []
     return new
