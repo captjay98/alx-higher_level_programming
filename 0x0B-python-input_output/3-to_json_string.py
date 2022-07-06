@@ -4,7 +4,7 @@
 
 
 def to_json_string(my_obj):
-    """Returns the JSON representation of an object (string)
-    returns JSON representation
+    """module to_json_string
+    returns JSON repr
     """
     return json.dumps(my_obj)
