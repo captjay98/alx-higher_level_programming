@@ -1,13 +1,15 @@
 #!/usr/bin/python3
+import pep8
 import unittest
 from models.square import Square
 import sys
+import os
+import os
 from io import StringIO
-import pep8
 from models.base import Base
 import json
 from models.rectangle import Rectangle
-import os
+
 """
 This module contains all unittest for Base class
 """
