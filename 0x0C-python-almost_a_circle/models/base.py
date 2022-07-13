@@ -60,3 +60,25 @@ class Base:
                         for o in cls.from_json_string(f.read())]
         except FileNotFoundError:
             return []
+
+    def save_to_file_csv(cls, list_objs):
+        """Saves a list of instances to a csv file"""
+        if list_objs is not None:
+            list_objs = [o.to_dictionary() for o in list_objs]
+        with open("{}.csv".format(cls.__name__), "w", encoding="utf-8") as f:
+            if cls.__name__ == "Rectangle":
+                f.write("[Rectangle]\n")
+            elif cls.__name__ == "Square":
+                f.write("[Square]\n")
+            for o in list_objs:
+                f.write(str(o) + "\n")
+
+    def load_from_file_csv(cls):
+        """Returns a list of instances"""
+        try:
+            with open("{}.csv".format(cls.__name__),
+                      "r", encoding="utf-8") as f:
+                return [cls.create(**o)
+                        for o in cls.from_json_string(f.read())]
+        except FileNotFoundError:
+            return []
