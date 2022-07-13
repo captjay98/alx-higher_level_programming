@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Import from Base class"""
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -82,17 +82,25 @@ class Rectangle(Base):
             print(" " * self.x, end="")
             print("#" * self.width)
 
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """Updates instance attributes via */**args."""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
     def update(self, *args, **kwargs):
-        """Updates the rectangle"""
-        if len(args) != 0:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key)
+        """Updates instance attributes via no-keyword & keyword args."""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
 
     def to_dictionary(self):
         """Returns the dictionary representation of the rectangle"""
