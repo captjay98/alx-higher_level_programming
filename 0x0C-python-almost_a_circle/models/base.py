@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """ Base Class for all other objects in this Project"""
+
+import csv
+import csv
 import json
+import turtle
 
 
 class Base:
@@ -84,3 +88,39 @@ class Base:
                         for o in cls.from_json_string(f.read())]
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+
+        turtle.bgcolor("#0066FF")
+        turtle.pensize(5)
+
+        for rect in list_rectangles:
+            turtle.up()
+            turtle.goto(rect.x, rect.y)
+            turtle.pencolor("#0000FF")
+            turtle.fillcolor("#77CCFF")
+            turtle.down()
+            for i in range(2):
+                turtle.begin_fill()
+                turtle.forward(rect.width)
+                turtle.right(90)
+                turtle.forward(rect.height)
+                turtle.right(90)
+                turtle.end_fill()
+
+        turtle.color("#b5e3d8")
+        for sq in list_squares:
+            turtle.up()
+            turtle.goto(sq.x, sq.y)
+            turtle.pencolor("#0044FF")
+            turtle.fillcolor("#55AAFF")
+            turtle.down()
+            for i in range(2):
+                turtle.begin_fill()
+                turtle.forward(sq.width)
+                turtle.left(90)
+                turtle.forward(sq.height)
+                turtle.left(90)
+                turtle.end_fill()
+        turtle.exitonclick()
