@@ -61,7 +61,7 @@ class Base:
         except FileNotFoundError:
             return []
 
-    @staticmethod
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """Saves a list of instances to a csv file"""
         if list_objs is not None:
@@ -74,7 +74,7 @@ class Base:
             for o in list_objs:
                 f.write(str(o) + "\n")
 
-    @staticmethod
+    @classmethod
     def load_from_file_csv(cls):
         """Returns a list of instances"""
         try:
