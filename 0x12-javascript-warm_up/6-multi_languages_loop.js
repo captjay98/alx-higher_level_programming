@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const progLag = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-
-progLag.forEach((item) => {
-  console.log(item);
-});
+let i = 0;
+for (i = 0; i < progLag.length; i++) {
+  console.log(progLag[i]);
+}
