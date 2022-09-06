@@ -2,17 +2,27 @@
 
 const args = process.argv;
 
-let largest = 0;
+if (args.length === 2 || args.length === 3) {
+  console.log(0);
+}
 const myarr = [];
 
-if (args[2] < 3) {
-  console.log(0);
-} else {
-  for (let i = 2; i < args.length; i++) {
-    if (args[i] > largest) {
-      largest = args[i];
-      myarr.push(largest);
-    }
+args.forEach((val) => {
+  if (isNaN(val) === false) {
+    myarr.push(val);
   }
-  console.log(myarr[0]);
+});
+
+console.log(myarr);
+let largest = myarr[1];
+let slargest = myarr[2];
+
+for (let i = 0; i < myarr.length; i++) {
+  if (myarr[i] > largest) {
+    slargest = largest;
+    largest = myarr[i];
+  } else if (myarr[i] > slargest && myarr[i] < largest) {
+    slargest = myarr[i];
+  }
 }
+console.log(slargest);
