@@ -16,7 +16,7 @@ connection = MySQLdb.connect(
 
 cursor = connection.cursor()
 
-cursor.execute(" SELECT * FROM customers")
+cursor.execute("SELECT * FROM states")
 
 db = cursor.fetchall()
 
