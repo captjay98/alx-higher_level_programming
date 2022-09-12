@@ -10,22 +10,24 @@ user = argv[1]
 password = argv[2]
 database = argv[3]
 
-connection = MySQLdb.connect(
-                                                        host='localhost',
-                                                        port=3306,
-                                                        user=user,
-                                                        password=password,
-                                                        database=database
-                                                        )
 
-cursor = connection.cursor()
+if __name__ == '__main__':
+    connection = MySQLdb.connect(
+                                                            host='localhost',
+                                                            port=3306,
+                                                            user=user,
+                                                            password=password,
+                                                            database=database
+                                                            )
 
-cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor = connection.cursor()
 
-db = cursor.fetchall()
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
-for item in db:
-    print(item)
+    db = cursor.fetchall()
 
-cursor.close()
-db.close()
+    for item in db:
+        print(item)
+
+    cursor.close()
+    db.close()
