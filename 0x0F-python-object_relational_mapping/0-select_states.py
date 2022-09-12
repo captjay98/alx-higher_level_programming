@@ -6,12 +6,11 @@ from sys import argv
 """ script that lists all states from
 the database """
 
-user = argv[1]
-password = argv[2]
-database = argv[3]
-
 
 if __name__ == '__main__':
+    user = argv[1]
+    password = argv[2]
+    database = argv[3]
     connection = MySQLdb.connect(
                                                             host='localhost',
                                                             port=3306,
