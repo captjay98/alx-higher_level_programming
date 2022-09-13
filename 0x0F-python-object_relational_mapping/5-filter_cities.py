@@ -14,9 +14,17 @@ if __name__ == "__main__":
         database=database
     )
     cur = db.cursor()
-    cur.execute("""SELECT cities.id, cities.name, states.name(SELECT states.name FROM states WHERE name = 'Texas')
+    cur.execute("""SELECT cities.id, cities.name, states.name
                 FROM cities
-                JOIN states ON cities.state_id = states.id
+                LEFT JOIN states ON cities.state_id = states.id
                 ORDER BY cities.id ASC""")
-    for item in cur.fetchall():
-        print(item)
+    data = cur.fetchall()
+    for row in data:
+        if row[2] == argv[4]:
+            if cont > 0:
+                print(", ", end="")
+            print(row[1], end="")
+            cont = cont + 1
+    print()
+    cur.close()
+    db.close()
