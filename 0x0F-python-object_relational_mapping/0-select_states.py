@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-
+""" script that lists all states from
+the database """
 
 import MySQLdb
 from sys import argv
-
-""" script that lists all states from
-the database """
 
 if __name__ == '__main__':
     user, password, database = argv[1], argv[2], argv[3]
@@ -16,9 +14,8 @@ if __name__ == '__main__':
                                             )
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
-    """for item in cur.fetchall():
-        print(item)"""
-    [print (state) for state in cur.fetchall()]
-    
+    for item in cur.fetchall():
+        print(item)
+
     cur.close()
     db.close()
