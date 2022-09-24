@@ -7,10 +7,13 @@ variable found in the header of the response
 
 
 if __name__ == '__main__':
-    import urllib.request
+    from urllib import request
+    from urllib.error import HTTPError
     from sys import argv
 
     url = f'argv[1]'
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        print(dict(response.headers).get("X-Request-Id"))
+    try:
+        with request.urlopen(url) as response:
+            print(resp.read().decode('UTF-8'))
+    except HTTPError as e:
+        print("Error code:": e.code)
