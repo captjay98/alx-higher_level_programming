@@ -12,10 +12,10 @@ if __name__ == '__main__':
     import urllib.parse
     from sys import argv
 
-    url = f'{argv[1]}'
+    url = argv[1]
     val = {'email': argv[2]}
     data = urllib.parse.urlencode(val).encode('ascii')
 
     request = urllib.request.Request(url, data)
     with urllib.request.urlopen(request) as response:
-        print(response.read().decode(utf-8))
+        print(response.read().decode('utf-8'))

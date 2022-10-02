@@ -11,8 +11,8 @@ if __name__ == '__main__':
     from sys import argv
 
     url = argv[1]
-    try:
-        r = requests.get(f'{url}')
-        print(r.text)
-    except HTTPError as e:
-        print('Error code: {r.status_code}')
+
+    req= requests.get(url)
+    status = req.status_code
+    print(req.text) if status < 400 else print(
+        "Error code: {}".format(req.status_code))

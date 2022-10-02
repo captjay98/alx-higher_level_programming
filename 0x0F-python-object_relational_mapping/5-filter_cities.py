@@ -20,7 +20,7 @@ if __name__ == "__main__":
                 ORDER BY cities.id ASC""")
     data = cur.fetchall()
     for row in data:
-        if row[2] == argv[4]:
+        if row[2] == argv[4]:ujj
             if cont > 0:
                 print(", ", end="")
             print(row[1], end="")
